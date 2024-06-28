@@ -15,7 +15,7 @@ export const hightlightsSlides = [
   {
     id: 1,
     textLists: [
-      "Enter A17 Pro.",
+      "NFC tag 215.",
       "Game‑changing chip.",
       "Groundbreaking performance.",
     ],
@@ -24,23 +24,26 @@ export const hightlightsSlides = [
   },
   {
     id: 2,
-    textLists: ["Titanium.", "So strong. So light. So Pro."],
+    textLists: ["Metal.", "So strong. So light. So Executive."],
     video: highlightSecondVideo,
     videoDuration: 5,
   },
   {
     id: 3,
     textLists: [
-      "iPhone 15 Pro Max has the",
-      "longest optical zoom in",
-      "iPhone ever. Far out.",
+      // "iPhone 15 Pro Max has the",
+      // "longest optical zoom in",
+      // "iPhone ever. Far out.",
+      "Data retention: 10 years.",
+      "Endurance: 100,000 cycles.",
+      "Password Protection: Yes."
     ],
     video: highlightThirdVideo,
     videoDuration: 2,
   },
   {
     id: 4,
-    textLists: ["All-new Action button.", "What will yours do?."],
+    textLists: ["All-new Action.", "What will yours do?."],
     video: highlightFourthVideo,
     videoDuration: 3.63,
   },

@@ -36,59 +36,59 @@ const HowItWorks = () => {
 
         <div className="flex flex-col items-center">
           <h2 className="hiw-title">
-            A17 Pro chip.
-            <br /> A monster win for gaming.
+            NFCTag215 chip.
+            <br /> The executive's optimal choice.
           </h2>
 
           <p className="hiw-subtitle">
-            It's here. The biggest redesign in the history of Apple GPUs.
+            It's here. The epitome of elegance in business.
           </p>
         </div>
 
         <div className="mt-10 md:mt-20 mb-14">
           <div className="relative h-full flex-center">
             <div className="overflow-hidden">
-              <img 
+              <img
                 src={frameImg}
                 alt="frame"
                 className="bg-transparent relative z-10"
               />
             </div>
             <div className="hiw-video">
-                <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
-                  <source src={frameVideo} type="video/mp4" />
-                </video>
-              </div>
+              <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
+                <source src={frameVideo} type="video/mp4" />
+              </video>
+            </div>
           </div>
           <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
+        </div>
+
+        <div className="hiw-text-container">
+          <div className="flex flex-1 justify-center flex-col">
+            <p className="hiw-text g_fadeIn">
+              NFCTag215 is an entirely new NFC technology chip that delivers {' '}
+              <span className="text-white">
+                the fastest scanning range and the best storage capacity by far.
+              </span>.
+            </p>
+
+            <p className="hiw-text g_fadeIn">
+              Business Card {' '}
+              <span className="text-white">
+                will look and feel so immersive
+              </span>,
+              With incredibly personalized data and detailed engraving.
+            </p>
           </div>
 
-          <div className="hiw-text-container">
-                <div className="flex flex-1 justify-center flex-col">
-                  <p className="hiw-text g_fadeIn">
-                    A17 Pro is an entirely new class of iPhone chip that delivers our {' '}
-                    <span className="text-white">
-                      best graphic performance by far
-                    </span>.
-                  </p>
 
-                  <p className="hiw-text g_fadeIn">
-                   Mobile {' '}
-                    <span className="text-white">
-                      games will look and feel so immersive
-                    </span>,
-                     with incredibly detailed environments and characters.
-                  </p>
-                </div>
-              
-
-              <div className="flex-1 flex justify-center flex-col g_fadeIn">
-                <p className="hiw-text">New</p>
-                <p className="hiw-bigtext">Pro-class GPU</p>
-                <p className="hiw-text">with 6 cores</p>
-              </div>
-              </div>
-            </div>
+          <div className="flex-1 flex justify-center flex-col g_fadeIn">
+            <p className="hiw-text">New</p>
+            <p className="hiw-bigtext">Executive Business Card</p>
+            <p className="hiw-text">with tapable features</p>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

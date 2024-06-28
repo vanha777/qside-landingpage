@@ -19,7 +19,7 @@ const Features = () => {
       }
     })
 
-    animateWithGsap('#features_title', { y:0, opacity:1})
+    animateWithGsap('#features_title', { y: 0, opacity: 1 })
     animateWithGsap(
       '.g_grow',
       { scale: 1, opacity: 1, ease: 'power1' },
@@ -27,7 +27,7 @@ const Features = () => {
     );
     animateWithGsap(
       '.g_text',
-      {y:0, opacity: 1,ease: 'power2.inOut',duration: 1}
+      { y: 0, opacity: 1, ease: 'power2.inOut', duration: 1 }
     )
   }, []);
 
@@ -37,11 +37,11 @@ const Features = () => {
         <div className="mb-12 w-full">
           <h1 id="features_title" className="section-heading">Explore the full story.</h1>
         </div>
-        
+
         <div className="flex flex-col justify-center items-center overflow-hidden">
           <div className="mt-32 mb-24 pl-24">
-            <h2 className="text-5xl lg:text-7xl font-semibold">iPhone.</h2>
-            <h2 className="text-5xl lg:text-7xl font-semibold">Forged in titanium.</h2>
+            <h2 className="text-5xl lg:text-7xl font-semibold">Business Card.</h2>
+            <h2 className="text-5xl lg:text-7xl font-semibold">Forged for Executive.</h2>
           </div>
 
           <div className="flex-center flex-col sm:px-10">
@@ -64,19 +64,19 @@ const Features = () => {
               <div className="feature-text-container">
                 <div className="flex-1 flex-center">
                   <p className="feature-text g_text">
-                    iPhone 15 Pro is {' '}
+                    Qside Executive Business Card is {' '}
                     <span className="text-white">
-                      the first iPhone to feature an aerospace-grade titanium design
+                      the first card to feature a tappable-grade metallic design.
                     </span>,
-                    using the same alloy that spacecrafts use for missions to Mars.
+                    leveraging the latest NFC technology used by Apple Pay.
                   </p>
                 </div>
 
                 <div className="flex-1 flex-center">
                   <p className="feature-text g_text">
-                    Titanium has one of the best strength-to-weight ratios of any metal, making these our {' '}
+                    Crafted from highly polished metal with enhanced PVC materials, making it our {' '}
                     <span className="text-white">
-                      lightest Pro models ever.
+                      sleekest card ever.
                     </span>
                     You'll notice the difference the moment you pick one up.
                   </p>
