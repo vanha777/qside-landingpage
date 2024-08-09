@@ -15,7 +15,7 @@ export const hightlightsSlides = [
   {
     id: 1,
     textLists: [
-      "NFC tag 215.",
+      "NFC tag 216.",
       "Game‑changing chip.",
       "Groundbreaking performance.",
     ],

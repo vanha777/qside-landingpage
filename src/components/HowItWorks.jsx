@@ -66,7 +66,7 @@ const HowItWorks = () => {
         <div className="hiw-text-container">
           <div className="flex flex-1 justify-center flex-col">
             <p className="hiw-text g_fadeIn">
-              NFCTag215 is an entirely new NFC technology chip that delivers {' '}
+              NFCTag216 is an entirely new NFC technology chip that delivers {' '}
               <span className="text-white">
                 the fastest scanning range and the best storage capacity by far.
               </span>.
