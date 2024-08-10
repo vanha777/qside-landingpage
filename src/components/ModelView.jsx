@@ -7,20 +7,41 @@ import IPhone from './IPhone';
 import { Suspense } from "react";
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
-  const [controlsEnabled, setControlsEnabled] = useState(false);
+  const [controlsEnabled, setControlsEnabled] = useState(false); // Initially disabled
   const controlsRef = useRef(null);
-
-  useEffect(() => {
-    if (controlsRef.current) {
-      controlsRef.current.enabled = controlsEnabled;
-      controlsRef.current.domElement.style.touchAction = controlsEnabled ? 'auto' : 'none';
-    }
-  }, [controlsEnabled]);
 
   // Toggle OrbitControls
   const toggleControls = () => {
     setControlsEnabled(prev => !prev);
   };
+
+  useEffect(() => {
+    if (controlsRef.current) {
+      // Ensure controls are initialized
+      controlsRef.current.enabled = controlsEnabled;
+      controlsRef.current.domElement.style.touchAction = controlsEnabled ? 'auto' : 'none';
+
+      // Force update to ensure changes are applied
+      controlsRef.current.update();
+    }
+  }, [controlsEnabled]);
+
+    // Initialize OrbitControls after the component mounts with a delay
+    useEffect(() => {
+      const initializeControls = () => {
+        if (controlsRef.current) {
+          controlsRef.current.enabled = false;
+          controlsRef.current.domElement.style.touchAction = false ? 'auto' : 'none';
+        }
+      };
+  
+      const timer = setTimeout(() => {
+        initializeControls();
+      }, 3000); // Wait 3 seconds
+  
+      // Cleanup timer on component unmount
+      return () => clearTimeout(timer);
+    }, []);
 
   return (
     <>
@@ -46,7 +67,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
           enablePan={false}
           rotateSpeed={0.4}
           target={new THREE.Vector3(0, 0, 0)}
-          onEnd={() => setRotationState(controlRef.current.getAzimuthalAngle())}
+          onEnd={() => setRotationState(controlsRef.current.getAzimuthalAngle())}
         />
 
         <group ref={groupRef} name={`${index === 1} ? 'small' : 'large`} position={[0, 0, 0]}>
