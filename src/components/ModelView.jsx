@@ -1,5 +1,5 @@
 import { Html, OrbitControls, PerspectiveCamera, View } from "@react-three/drei"
-
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three'
 import Lights from './Lights';
 import Loader from './Loader';
@@ -7,7 +7,43 @@ import IPhone from './IPhone';
 import { Suspense } from "react";
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
+  const [controlsEnabled, setControlsEnabled] = useState(true);
+  const containerRef = useRef(null);
+  const controlsRef = useRef(null);
+
+  useEffect(() => {
+    if (controlsRef.current) {
+      controlsRef.current.enabled = controlsEnabled;
+    }
+  }, [controlsEnabled]);
+
+  useEffect(() => {
+    const handleTouchStart = (e) => {
+      if (containerRef.current && containerRef.current.contains(e.target)) {
+        setControlsEnabled(true); // Enable controls if touch is inside the div
+      } else {
+        setControlsEnabled(false); // Disable controls if touch is outside the div
+      }
+    };
+
+    const handleTouchMove = (e) => {
+      if (containerRef.current && !containerRef.current.contains(e.target)) {
+        setControlsEnabled(false); // Disable controls if touch is moving outside the div
+      }
+    };
+
+    // Set up event listeners
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   return (
+    <div ref={containerRef}>
     <View
       index={index}
       id={gsapType}
@@ -25,7 +61,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
 
       <OrbitControls 
         makeDefault
-        ref={controlRef}
+        ref={controlsRef}
         enableZoom={false}
         enablePan={false}
         rotateSpeed={0.4}
@@ -43,6 +79,8 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
         </Suspense>
       </group>
     </View>
+    </div>
+
   )
 }
 
