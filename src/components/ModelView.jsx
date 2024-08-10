@@ -13,15 +13,11 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
   };
   // Set controlsEnabled based on device type on mount
   useEffect(() => {
-    // if (isMobileDevice()) {
-    //   setControlsEnabled(false); // Disable by default on mobile
-    // } else {
-    //   setControlsEnabled(true); // Enable by default on desktop
-    // }
-    const timer = setTimeout(() => {
-      initializeControls();
-    }, 3000); // Wait 3 seconds
-    setControlsEnabled(true);
+    if (isMobileDevice()) {
+      setControlsEnabled(false); // Disable by default on mobile
+    } else {
+      setControlsEnabled(true); // Enable by default on desktop
+    }
   }, []);
 
   // Toggle OrbitControls
@@ -67,16 +63,38 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
           </Suspense>
         </group>
       </View>
+
       {/* Buttons to enable/disable controls */}
-      <div className="absolute top-0 right-0 p-4">
+      <div className="absolute top-0 right-0 p-4 md:hidden">
+        {/* <button
+     onClick={toggleControls}
+     className={`px-4 py-2 text-white ${controlsEnabled ? 'bg-red-500' : 'bg-green-500'} rounded`}
+   >
+     {controlsEnabled ? 'Disable Controls' : 'Enable Controls'}
+   </button> */}
         <button
-          onClick={toggleControls}
-          className={`px-4 py-2 text-white ${controlsEnabled ? 'bg-red-500' : 'bg-green-500'} rounded`}
+          onClick={() => setControlsEnabled(prev => !prev)}
+          className={`px-4 py-2 text-white rounded flex items-center ${controlsEnabled ? 'bg-red-500' : 'bg-green-500'}`}
         >
-          {controlsEnabled ? 'Disable Controls' : 'Enable Controls'}
+          <span className="mr-2">
+            {controlsEnabled ? 'Disable Controls' : 'Enable Controls'}
+          </span>
+          <svg
+            className={`w-5 h-5 transition-transform ${controlsEnabled ? 'rotate-180' : ''}`}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 19l-7-7 7-7" />
+          </svg>
         </button>
       </div>
     </>
+
 
   )
 }
