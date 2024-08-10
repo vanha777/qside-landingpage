@@ -12,6 +12,9 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
       index={index}
       id={gsapType}
       className={`w-full h-full absolute ${index === 2 ? 'right-[-100%]' : ''}`}
+      style={{
+        position: 'relative',  // Change to relative to avoid overlapping
+      }}
     >
       {/* Ambient Light */}
       <ambientLight intensity={0.3} />
@@ -19,8 +22,8 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
       <PerspectiveCamera makeDefault position={[0, 0, 4]} />
 
       <Lights />
-{/* 
-      <OrbitControls 
+
+      {/* <OrbitControls 
         makeDefault
         ref={controlRef}
         enableZoom={false}
@@ -29,15 +32,6 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
         target={new THREE.Vector3(0, 0 ,0)}
         onEnd={() => setRotationState(controlRef.current.getAzimuthalAngle())}
       />  */}
-
-<OrbitControls 
-  makeDefault
-  ref={controlRef}
-  enableZoom={false}
-  enablePan={false}
-  enableRotate={false}  // Disable rotation to see if it resolves the issue
-  target={new THREE.Vector3(0, 0, 0)}
-/>
 
       <group ref={groupRef} name={`${index === 1} ? 'small' : 'large`} position={[0, 0 ,0]}>
         <Suspense fallback={<Loader />}>
