@@ -31,8 +31,8 @@ const Hero = () => {
     <section className="w-full nav-height bg-black relative">
       <div className="h-5/6 w-full flex-center flex-col">
         {/* <p id="hero" className="hero-title">Qside Executive Business Card</p> */}
-        {/* <div className="md:w-10/12 w-9/12"> */}
-        <div className="w-full h-full">
+        <div className="md:w-10/12 w-9/12">
+        {/* <div className="w-full h-full"> */}
           <video className="pointer-events-none" autoPlay muted loop playsInline={true} key={videoSrc}>
             <source src={videoSrc} type="video/mp4" />
           </video>

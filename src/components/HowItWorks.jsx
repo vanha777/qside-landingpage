@@ -88,7 +88,14 @@ const HowItWorks = () => {
             <p className="hiw-text">with tapable features</p>
           </div>
         </div>
+        {/* <div className="hiw-video"> */}
+        <div className="p-10 pt-20">
+          <video className="pointer-events-none" playsInline loop preload="none" muted autoPlay ref={videoRef}>
+            <source src={frameVideo} type="video/mp4" />
+          </video>
+        </div>
       </div>
+
     </section>
   )
 }
