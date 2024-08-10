@@ -60,8 +60,14 @@ const Model = () => {
         </h1>
 
         <div className="flex flex-col items-center mt-5"
-         onTouchMove={(e) => e.stopPropagation()}>
-          <div className=" w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              onTouchEnd={(e) => e.stopPropagation()}
+         >
+          <div className=" w-full h-[75vh] md:h-[90vh] overflow-hidden relative"
+            onTouchStart={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+            onTouchEnd={(e) => e.stopPropagation()}>
             <ModelView 
               index={1}
               groupRef={small}
