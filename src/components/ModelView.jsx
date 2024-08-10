@@ -7,7 +7,7 @@ import IPhone from './IPhone';
 import { Suspense } from "react";
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
-  const [controlsEnabled, setControlsEnabled] = useState(true);
+  const [controlsEnabled, setControlsEnabled] = useState(false);
   const controlsRef = useRef(null);
 
   useEffect(() => {
