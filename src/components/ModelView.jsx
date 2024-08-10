@@ -13,28 +13,21 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
   };
   // Set controlsEnabled based on device type on mount
   useEffect(() => {
-    if (isMobileDevice()) {
-      setControlsEnabled(false); // Disable by default on mobile
-    } else {
-      setControlsEnabled(false); // Enable by default on desktop
-    }
+    // if (isMobileDevice()) {
+    //   setControlsEnabled(false); // Disable by default on mobile
+    // } else {
+    //   setControlsEnabled(true); // Enable by default on desktop
+    // }
+    const timer = setTimeout(() => {
+      initializeControls();
+    }, 3000); // Wait 3 seconds
+    setControlsEnabled(true);
   }, []);
 
   // Toggle OrbitControls
   const toggleControls = () => {
     setControlsEnabled(prev => !prev);
   };
-
-  // useEffect(() => {
-  //   if (controlsRef.current) {
-  //     // Ensure controls are initialized
-  //     controlsRef.current.enabled = controlsEnabled;
-  //     controlsRef.current.domElement.style.touchAction = controlsEnabled ? 'auto' : 'none';
-
-  //     // Force update to ensure changes are applied
-  //     controlsRef.current.update();
-  //   }
-  // }, [controlsEnabled]);
 
   return (
     <>
@@ -60,7 +53,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
             enablePan={false}
             rotateSpeed={0.4}
             target={new THREE.Vector3(0, 0, 0)}
-            onEnd={() => setRotationState(controlsRef.current.getAzimuthalAngle())}
+            onEnd={() => setRotationState(controlRef.current.getAzimuthalAngle())}
           />
         )}
 
