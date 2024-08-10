@@ -23,7 +23,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
 
       <Lights />
 
-      <OrbitControls 
+      {/* <OrbitControls 
         makeDefault
         ref={controlRef}
         enableZoom={false}
@@ -31,7 +31,17 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
         rotateSpeed={0.4}
         target={new THREE.Vector3(0, 0 ,0)}
         onEnd={() => setRotationState(controlRef.current.getAzimuthalAngle())}
-      /> 
+      />  */}
+
+<OrbitControls 
+  makeDefault
+  ref={controlRef}
+  enableZoom={false}
+  enablePan={false}
+  enableRotate={true}  // Enable rotation
+  enableTouchRotate={false}  // Disable rotation via touch
+  enableTouchZoom={false}  // Disable zoom via touch
+/>
 
       <group ref={groupRef} name={`${index === 1} ? 'small' : 'large`} position={[0, 0 ,0]}>
         <Suspense fallback={<Loader />}>
