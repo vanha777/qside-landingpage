@@ -9,6 +9,7 @@ import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import { models, sizes } from "../constants";
 import { animateWithGsapTimeline } from "../utils/animations";
+import ShopifyBuyButton from "./ShopifyBuyButton";
 
 const Model = () => {
   const [size, setSize] = useState('small');
@@ -121,6 +122,10 @@ const Model = () => {
 
         </div>
       </div>
+      <div key='buybutton' className="flex items-center justify-center p-10">
+        <ShopifyBuyButton productId="7400507113537" />
+      </div>
+
     </section>
   )
 }
