@@ -65,33 +65,14 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
       </View>
 
       {/* Buttons to enable/disable controls */}
-      <div className="absolute top-0 right-0 p-4 md:hidden">
-        {/* <button
-     onClick={toggleControls}
-     className={`px-4 py-2 text-white ${controlsEnabled ? 'bg-red-500' : 'bg-green-500'} rounded`}
-   >
-     {controlsEnabled ? 'Disable Controls' : 'Enable Controls'}
-   </button> */}
-        <button
-          onClick={() => setControlsEnabled(prev => !prev)}
-          className={`px-4 py-2 text-white rounded flex items-center ${controlsEnabled ? 'bg-red-500' : 'bg-green-500'}`}
-        >
-          <span className="mr-2">
-            {controlsEnabled ? 'Disable Controls' : 'Enable Controls'}
-          </span>
-          <svg
-            className={`w-5 h-5 transition-transform ${controlsEnabled ? 'rotate-180' : ''}`}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M12 19l-7-7 7-7" />
-          </svg>
-        </button>
+      <div className="absolute top-0 right-0 p-4 md:hidden flex justify-between items-center w-full">
+        <p className="text-sm font-light text-center">3D Viewer</p>
+        <input
+          type="checkbox"
+          className="toggle toggle-success"
+          checked={controlsEnabled}
+          onChange={toggleControls}
+        />
       </div>
     </>
 
