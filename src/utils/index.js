@@ -11,7 +11,7 @@ import highlightFourthmv from "/assets/videos/hightlight-fourth.mp4";
 import exploremv from "/assets/videos/explore.mp4";
 import framemv from "/assets/videos/frame.mp4";
 
-import apple from "/assets/images/apple.svg";
+import apple from "/assets/images/apple.gif";
 import search from "/assets/images/search.svg";
 import bag from "/assets/images/bag.svg";
 import watch from "/assets/images/watch.svg";
@@ -24,9 +24,9 @@ import yellow from "/assets/images/yellow.jpg";
 import blue from "/assets/images/blue.jpg";
 import white from "/assets/images/white.jpg";
 import black from "/assets/images/black.jpg";
-import explore1 from "/assets/images/explore1.jpg";
-import explore2 from "/assets/images/explore2.jpg";
-import chip from "/assets/images/chip.jpeg";
+import explore1 from "/assets/images/explore1.png";
+import explore2 from "/assets/images/explore2.png";
+import chip from "/assets/images/chip.png";
 import frame from "/assets/images/frame.png";
 
 export const heroVideo = hmv;

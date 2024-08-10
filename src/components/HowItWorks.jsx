@@ -36,7 +36,7 @@ const HowItWorks = () => {
 
         <div className="flex flex-col items-center">
           <h2 className="hiw-title">
-            NFCTag215 chip.
+            NFCTag216 chip.
             <br /> The executive's optimal choice.
           </h2>
 
@@ -54,19 +54,19 @@ const HowItWorks = () => {
                 className="bg-transparent relative z-10"
               />
             </div>
-            <div className="hiw-video">
+            {/* <div className="hiw-video">
               <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
                 <source src={frameVideo} type="video/mp4" />
               </video>
-            </div>
+            </div> */}
           </div>
-          <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
+          {/* <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p> */}
         </div>
 
         <div className="hiw-text-container">
           <div className="flex flex-1 justify-center flex-col">
             <p className="hiw-text g_fadeIn">
-              NFCTag215 is an entirely new NFC technology chip that delivers {' '}
+              NFCTag216 is an entirely new NFC technology chip that delivers {' '}
               <span className="text-white">
                 the fastest scanning range and the best storage capacity by far.
               </span>.
@@ -88,7 +88,14 @@ const HowItWorks = () => {
             <p className="hiw-text">with tapable features</p>
           </div>
         </div>
+        {/* <div className="hiw-video"> */}
+        <div className="p-10 pt-20">
+          <video className="pointer-events-none" playsInline loop preload="none" muted autoPlay ref={videoRef}>
+            <source src={frameVideo} type="video/mp4" />
+          </video>
+        </div>
       </div>
+
     </section>
   )
 }
