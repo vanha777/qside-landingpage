@@ -80,11 +80,11 @@ const Model = () => {
               item={model}
               size={size}
             /> */}
-
             <Canvas
               className="w-full h-full"
               style={{
-                position: 'fixed',
+                // position: 'fixed',
+                position: 'absolute', 
                 top: 0,
                 bottom: 0,
                 left: 0,
@@ -97,7 +97,7 @@ const Model = () => {
             </Canvas>
           </div>
 
-          {/* <div className="mx-auto w-full">
+          <div className="mx-auto w-full">
             <p className="text-sm font-light text-center mb-5">{model.title}</p>
 
             <div className="flex-center">
@@ -115,8 +115,8 @@ const Model = () => {
                 ))}
               </button>
             </div>
-          </div> */}
-
+          </div>
+          
         </div>
       </div>
     </section>
