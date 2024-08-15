@@ -62,13 +62,29 @@ const Model = () => {
 
         <div className="flex flex-col items-center mt-5">
           <div className=" w-full h-[75vh] md:h-[90vh] overflow-hidden relative"
-            onTouchStart={(e) => e.stopPropagation()}
-            onTouchMove={(e) => e.stopPropagation()}
-            onTouchEnd={(e) => e.stopPropagation()}>
+            // onTouchStart={(e) => e.stopPropagation()}
+            // onTouchMove={(e) => e.stopPropagation()}
+            // onTouchEnd={(e) => e.stopPropagation()}
+            >
             <ModelView
+              type="gold"
               index={1}
               groupRef={small}
               gsapType="view1"
+              controlRef={cameraControlSmall}
+              setRotationState={setSmallRotation}
+              item={model}
+              size={size}
+            />
+
+            <ModelView
+              type="silver"
+              index={2}
+              // groupRef={large}
+              groupRef={small}
+              gsapType="view2"
+              // controlRef={cameraControlLarge}
+              // setRotationState={setLargeRotation}
               controlRef={cameraControlSmall}
               setRotationState={setSmallRotation}
               item={model}

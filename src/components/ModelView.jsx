@@ -6,7 +6,8 @@ import Loader from './Loader';
 import IPhone from './IPhone';
 import { Suspense } from "react";
 
-const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
+const ModelView = ({type, index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
+  console.log("this is changing card ", size);
   const [controlsEnabled, setControlsEnabled] = useState(false); // Initially disabled
   const isMobileDevice = () => {
     return /Mobi|Android/i.test(navigator.userAgent);
@@ -31,9 +32,9 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
         index={index}
         id={gsapType}
         className={`w-full h-full absolute ${index === 2 ? 'right-[-100%]' : ''}`}
-        style={{
-          position: 'relative',  // Change to relative to avoid overlapping
-        }}
+        // style={{
+        //   position: 'relative',  // Change to relative to avoid overlapping
+        // }}
       >
         {/* Ambient Light */}
         <ambientLight intensity={0.3} />
@@ -56,7 +57,9 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
         <group ref={groupRef} name={`${index === 1} ? 'small' : 'large`} position={[0, 0, 0]}>
           <Suspense fallback={<Loader />}>
             <IPhone
-              scale={index === 1 ? [15, 15, 15] : [17, 17, 17]}
+              type={type}
+              index={index}
+              scale={index === 1 ? [15, 15, 15] : [15, 15, 15]}
               item={item}
               size={size}
             />
