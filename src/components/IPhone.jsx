@@ -270,13 +270,13 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 function Model(props) {
-  console.log("this is index ,",props.index);
+  console.log("this is index ,", props.index);
   // const { nodes, materials } = useGLTF('/models/gold_card.glb')
-    // Conditionally choose the model path based on the size prop
-    const modelPath = props.type === 'silver' ? '/models/silver_card.glb' : '/models/gold_card.glb';
+  // Conditionally choose the model path based on the size prop
+  const modelPath = props.type === 'silver' ? '/models/silver_card.glb' : props.type == 'rose' ? '/models/rose_card.glb' : '/models/gold_card.glb';
 
-    // Load the selected model
-    const { nodes, materials } = useGLTF(modelPath);
+  // Load the selected model
+  const { nodes, materials } = useGLTF(modelPath);
   return (
     <group {...props} dispose={null}>
       <group rotation={[-1.724, -0.151, -0.012]} scale={0.02}>

@@ -22,14 +22,17 @@ const Model = () => {
   // camera control for the model view
   const cameraControlSmall = useRef();
   const cameraControlLarge = useRef();
+  const cameraControlExLarge = useRef();
 
   // model
   const small = useRef(new THREE.Group());
   const large = useRef(new THREE.Group());
+  const exLarge = useRef(new THREE.Group());
 
   // rotation
   const [smallRotation, setSmallRotation] = useState(0);
   const [largeRotation, setLargeRotation] = useState(0);
+  const [exLargeRotation, setExLargeRotation] = useState(0);
 
   const tl = gsap.timeline();
 
@@ -41,12 +44,20 @@ const Model = () => {
       })
     }
 
+    if (size === 'exLarge') {
+      animateWithGsapTimeline(tl, exLarge, exLargeRotation, '#view2', '#view3', {
+        transform: 'translateX(-100%)',
+        duration: 2,
+      })
+    }
+
     if (size === 'small') {
       animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
         transform: 'translateX(0)',
         duration: 2
       })
     }
+
   }, [size])
 
   useGSAP(() => {
@@ -62,10 +73,10 @@ const Model = () => {
 
         <div className="flex flex-col items-center mt-5">
           <div className=" w-full h-[75vh] md:h-[90vh] overflow-hidden relative"
-            // onTouchStart={(e) => e.stopPropagation()}
-            // onTouchMove={(e) => e.stopPropagation()}
-            // onTouchEnd={(e) => e.stopPropagation()}
-            >
+          // onTouchStart={(e) => e.stopPropagation()}
+          // onTouchMove={(e) => e.stopPropagation()}
+          // onTouchEnd={(e) => e.stopPropagation()}
+          >
             <ModelView
               type="gold"
               index={1}
@@ -81,12 +92,26 @@ const Model = () => {
               type="silver"
               index={2}
               // groupRef={large}
-              groupRef={small}
+              groupRef={large}
               gsapType="view2"
               // controlRef={cameraControlLarge}
               // setRotationState={setLargeRotation}
-              controlRef={cameraControlSmall}
-              setRotationState={setSmallRotation}
+              controlRef={cameraControlLarge}
+              setRotationState={setLargeRotation}
+              item={model}
+              size={size}
+            />
+
+            
+            <ModelView
+              type="rose"
+              index={3}
+              groupRef={exLarge}
+              gsapType="view3"
+              // controlRef={cameraControlLarge}
+              // setRotationState={setLargeRotation}
+              controlRef={cameraControlExLarge}
+              setRotationState={setExLargeRotation}
               item={model}
               size={size}
             />
