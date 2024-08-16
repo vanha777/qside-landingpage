@@ -37,40 +37,72 @@ const Model = () => {
   const tl = gsap.timeline();
 
   useEffect(() => {
-    if (size === 'large') {
-      animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', {
-        transform: 'translateX(-100%)',
-        duration: 2
-      })
-    }
+    switch (size) {
+      case 'large':
+        animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', '#view3', {
+          transform: 'translateX(-120%)',
+          duration: 2
+        });
+        break;
+      case 'small':
+        animateWithGsapTimeline(tl, large, largeRotation, '#view3', '#view2', '#view1', {
+          transform: 'translateX(0)',
+          duration: 2
+        });
+        break;
+      case 'exLarge':
+        animateWithGsapTimeline(tl, exLarge, exLargeRotation, '#view2', '#view3', '#view1', {
+          transform: 'translateX(-240%)',
+          duration: 2,
+        });
+        break;
 
-    if (size === 'exLarge') {
-      animateWithGsapTimeline(tl, exLarge, exLargeRotation, '#view2', '#view3', {
-        transform: 'translateX(-100%)',
-        duration: 2,
-      })
+        break;
+      default:
+        break;
     }
+  }, [size]);
 
-    if (size === 'small') {
-      animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
-        transform: 'translateX(0)',
-        duration: 2
-      })
-    }
-
-  }, [size])
 
   useGSAP(() => {
     gsap.to('#heading', { y: 0, opacity: 1 })
   }, []);
 
+  console.log("this is changing card ", size);
+  const [controlsEnabled, setControlsEnabled] = useState(false); // Initially disabled
+  const isMobileDevice = () => {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  };
+  // Set controlsEnabled based on device type on mount
+  useEffect(() => {
+    if (isMobileDevice()) {
+      console.log("setting false");
+      setControlsEnabled(false); // Disable by default on mobile
+    } else {
+      setControlsEnabled(true); // Enable by default on desktop
+    }
+  }, []);
+
+  // Toggle OrbitControls
+  const toggleControls = () => {
+    setControlsEnabled(prev => !prev);
+  };
   return (
     <section className="common-padding">
       <div className="screen-max-width">
         <h1 id="heading" className="section-heading">
           Take a closer look.
         </h1>
-
+        {/* Buttons to enable/disable controls */}
+        <div className=" top-0 right-0 p-4 md:hidden flex justify-between items-center w-full">
+          <p className="text-sm font-light text-center">3D Viewer</p>
+          <input
+            type="checkbox"
+            className="toggle toggle-success"
+            checked={controlsEnabled}
+            onChange={toggleControls}
+          />
+        </div>
         <div className="flex flex-col items-center mt-5">
           <div className=" w-full h-[75vh] md:h-[90vh] overflow-hidden relative"
           // onTouchStart={(e) => e.stopPropagation()}
@@ -86,6 +118,7 @@ const Model = () => {
               setRotationState={setSmallRotation}
               item={model}
               size={size}
+              controlsEnabled={controlsEnabled}
             />
 
             <ModelView
@@ -100,9 +133,10 @@ const Model = () => {
               setRotationState={setLargeRotation}
               item={model}
               size={size}
+              controlsEnabled={controlsEnabled}
             />
 
-            
+
             <ModelView
               type="rose"
               index={3}
@@ -114,6 +148,7 @@ const Model = () => {
               setRotationState={setExLargeRotation}
               item={model}
               size={size}
+              controlsEnabled={controlsEnabled}
             />
 
             {/* <ModelView 
@@ -147,17 +182,20 @@ const Model = () => {
             <div className="flex-center">
               <ul className="color-container">
                 {models.map((item, i) => (
-                  <li key={i} className="w-6 h-6 rounded-full mx-2 cursor-pointer" style={{ backgroundColor: item.color[0] }} onClick={() => setModel(item)} />
+                  <li key={i} className="w-6 h-6 rounded-full mx-2 cursor-pointer" style={{ backgroundColor: item.color[0] }} onClick={() => {
+                    setModel(item)
+                    setSize(item.type)
+                  }} />
                 ))}
               </ul>
 
-              <button className="size-btn-container">
+              {/* <button className="size-btn-container">
                 {sizes.map(({ label, value }) => (
                   <span key={label} className="size-btn" style={{ backgroundColor: size === value ? 'white' : 'transparent', color: size === value ? 'black' : 'white' }} onClick={() => setSize(value)}>
                     {label}
                   </span>
                 ))}
-              </button>
+              </button> */}
             </div>
           </div>
 

@@ -15,12 +15,38 @@ export const animateWithGsap = (target, animationProps, scrollProps) => {
   })
 }
 
-export const animateWithGsapTimeline = (timeline, rotationRef, rotationState, firstTarget, secondTarget, animationProps) => {
+// export const animateWithGsapTimeline = (timeline, rotationRef, rotationState, firstTarget, secondTarget, animationProps) => {
+//   timeline.to(rotationRef.current.rotation, {
+//     y: rotationState,
+//     duration: 1,
+//     ease: 'power2.inOut'
+//   })
+
+//   timeline.to(
+//     firstTarget,
+//     {
+//       ...animationProps,
+//       ease: 'power2.inOut'
+//     },
+//     '<'
+//   )
+
+//   timeline.to(
+//     secondTarget,
+//     {
+//       ...animationProps,
+//       ease: 'power2.inOut'
+//     },
+//     '<'
+//   )
+// }
+
+export const animateWithGsapTimeline = (timeline, rotationRef, rotationState, firstTarget, secondTarget, thirdTarget, animationProps) => {
   timeline.to(rotationRef.current.rotation, {
     y: rotationState,
     duration: 1,
     ease: 'power2.inOut'
-  })
+  });
 
   timeline.to(
     firstTarget,
@@ -29,7 +55,7 @@ export const animateWithGsapTimeline = (timeline, rotationRef, rotationState, fi
       ease: 'power2.inOut'
     },
     '<'
-  )
+  );
 
   timeline.to(
     secondTarget,
@@ -38,5 +64,14 @@ export const animateWithGsapTimeline = (timeline, rotationRef, rotationState, fi
       ease: 'power2.inOut'
     },
     '<'
-  )
-}
+  );
+
+  timeline.to(
+    thirdTarget,
+    {
+      ...animationProps,
+      ease: 'power2.inOut'
+    },
+    '<'
+  );
+};

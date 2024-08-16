@@ -6,20 +6,8 @@ import Loader from './Loader';
 import IPhone from './IPhone';
 import { Suspense } from "react";
 
-const ModelView = ({ type, index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
-  console.log("this is changing card ", size);
-  const [controlsEnabled, setControlsEnabled] = useState(false); // Initially disabled
-  const isMobileDevice = () => {
-    return /Mobi|Android/i.test(navigator.userAgent);
-  };
-  // Set controlsEnabled based on device type on mount
-  useEffect(() => {
-    if (isMobileDevice()) {
-      setControlsEnabled(false); // Disable by default on mobile
-    } else {
-      setControlsEnabled(true); // Enable by default on desktop
-    }
-  }, []);
+const ModelView = ({ type, index, groupRef, gsapType, controlRef, setRotationState, size, item,controlsEnabled }) => {
+
 
   // Toggle OrbitControls
   const toggleControls = () => {
@@ -31,7 +19,7 @@ const ModelView = ({ type, index, groupRef, gsapType, controlRef, setRotationSta
       <View
         index={index}
         id={gsapType}
-        className={`w-full h-full absolute ${index === 1 ? '' : 'right-[-100%]'}`}
+        className={`w-full h-full absolute ${index === 1 ? '' : index === 2 ? 'right-[-120%]' : 'right-[-240%]'}`}
       // style={{
       //   position: 'relative',  // Change to relative to avoid overlapping
       // }}
@@ -67,7 +55,7 @@ const ModelView = ({ type, index, groupRef, gsapType, controlRef, setRotationSta
         </group>
       </View>
 
-      {/* Buttons to enable/disable controls */}
+      {/* Buttons to enable/disable controls
       <div className="absolute top-0 right-0 p-4 md:hidden flex justify-between items-center w-full">
         <p className="text-sm font-light text-center">3D Viewer</p>
         <input
@@ -76,7 +64,7 @@ const ModelView = ({ type, index, groupRef, gsapType, controlRef, setRotationSta
           checked={controlsEnabled}
           onChange={toggleControls}
         />
-      </div>
+      </div> */}
     </>
 
 
