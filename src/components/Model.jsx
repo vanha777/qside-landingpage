@@ -2,7 +2,6 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap";
 import ModelView from "./ModelView";
 import { useEffect, useRef, useState } from "react";
-import { yellowImg } from "../utils";
 
 import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";
@@ -16,7 +15,6 @@ const Model = () => {
   const [model, setModel] = useState({
     title: 'Metal Card in Natural Titanium',
     color: ['#8F8A81', '#FFE7B9', '#6F6C64'],
-    img: yellowImg,
   })
 
   // camera control for the model view
