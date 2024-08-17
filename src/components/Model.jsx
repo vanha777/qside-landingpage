@@ -108,21 +108,22 @@ const Model = () => {
           // onTouchEnd={(e) => e.stopPropagation()}
           >
             <ModelView
-              type="gold"
+              type="silver"
               index={1}
+              // groupRef={large}
               groupRef={small}
               gsapType="view1"
+              // controlRef={cameraControlLarge}
+              // setRotationState={setLargeRotation}
               controlRef={cameraControlSmall}
               setRotationState={setSmallRotation}
               item={model}
               size={size}
               controlsEnabled={controlsEnabled}
             />
-
             <ModelView
-              type="silver"
+              type="rose"
               index={2}
-              // groupRef={large}
               groupRef={large}
               gsapType="view2"
               // controlRef={cameraControlLarge}
@@ -133,15 +134,11 @@ const Model = () => {
               size={size}
               controlsEnabled={controlsEnabled}
             />
-
-
             <ModelView
-              type="rose"
+              type="gold"
               index={3}
               groupRef={exLarge}
               gsapType="view3"
-              // controlRef={cameraControlLarge}
-              // setRotationState={setLargeRotation}
               controlRef={cameraControlExLarge}
               setRotationState={setExLargeRotation}
               item={model}

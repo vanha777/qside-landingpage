@@ -48,20 +48,20 @@ export const hightlightsSlides = [
 export const models = [
   {
     id: 1,
-    title: "Metal Card in Gold Titanium",
-    color: ["#FFD700", "#ffe7b9", "#6f6c64"],
+    title: "Metal Card in Silver Titanium",
+    color: ["#C0C0C0", "#6395ff", "#21242e"],
     type: "small",
   },
   {
     id: 2,
-    title: "Metal Card in Silver Titanium",
-    color: ["#C0C0C0", "#6395ff", "#21242e"],
+    title: "Metal Card in Rose Titanium",
+    color: ["#B76E79", "#ffffff", "#C9C8C2"],
     type: "large",
   },
   {
     id: 3,
-    title: "Metal Card in Rose Titanium",
-    color: ["#B76E79", "#ffffff", "#C9C8C2"],
+    title: "Metal Card in Gold Titanium",
+    color: ["#FFD700", "#ffe7b9", "#6f6c64"],
     type: "exLarge",
   },
 ];
