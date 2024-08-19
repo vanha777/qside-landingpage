@@ -195,10 +195,27 @@ const Model = () => {
           </div>
 
         </div>
+
+        <div className="flex justify-center items-center mt-5">
+          <div className="carousel carousel-center bg-neutral rounded-box max-w-xl space-x-4 p-4">
+            <div className="carousel-item" style={{ display: 'inline-block', width: '300px' }}>
+              <ShopifyBuyButton className="rounded-box" productId="7400507113537" />
+            </div>
+            <div className="carousel-item" style={{ display: 'inline-block', width: '300px' }}>
+              <ShopifyBuyButton className='rounded-box' productId="7409613471809" />
+            </div>
+            <div className="carousel-item" style={{ display: 'inline-block', width: '300px' }}>
+              <ShopifyBuyButton className='rounded-box' productId="7409614225473" />
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div key='buybutton' className="flex items-center justify-center p-10">
+      {/* <div  className="flex flex-row items-center justify-center p-10">
         <ShopifyBuyButton productId="7400507113537" />
-      </div>
+        <ShopifyBuyButton productId="7409613471809" />
+        <ShopifyBuyButton productId="7409614225473" />
+      </div> */}
 
     </section>
   )

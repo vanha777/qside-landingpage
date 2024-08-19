@@ -3,12 +3,9 @@ import ShopifyBuy from '@shopify/buy-button-js';
 
 const ShopifyBuyButton = ({ productId }) => {
     const buttonRef = useRef(null);
+    const id = `buybutton-${productId}`;
     useEffect(() => {
         console.log('Rendering Shopify Buy Button');
-        // existing code...
-    }, [productId]);
-
-    useEffect(() => {
         // Prevent re-initialization if the button has already been created
         if (buttonRef.current) return;
 
@@ -21,16 +18,18 @@ const ShopifyBuyButton = ({ productId }) => {
 
         ui.createComponent('product', {
             id: productId,
-            node: document.getElementById('buybutton'),
+            node: document.getElementById(id),
+            // node: buttonRef.current, // Use ref instead of ID
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: {
+                iframe: true,
                 product: {
                     iframe: true,
                     buttonDestination: 'modal',
                     contents: {
-                        img: false,
-                        title: false,
-                        price: false,
+                        img: true,
+                        title: true,
+                        price: true,
                         options: false,
                     },
                     text: {
@@ -70,7 +69,7 @@ const ShopifyBuyButton = ({ productId }) => {
         buttonRef.current = true;
     }, [productId]);
 
-    return <div id='buybutton' />;
+    return <div id={id} />;
 };
 
 export default ShopifyBuyButton;
