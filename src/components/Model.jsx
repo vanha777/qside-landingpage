@@ -196,15 +196,15 @@ const Model = () => {
 
         </div>
 
-        <div className="flex justify-center items-center mt-5">
+        <div className="flex justify-center items-center mt-20">
           <div className="carousel carousel-center bg-neutral rounded-box max-w-xl space-x-4 p-4">
-            <div className="carousel-item" style={{ display: 'inline-block', width: '300px' }}>
+            <div className="carousel-item">
               <ShopifyBuyButton className="rounded-box" productId="7400507113537" />
             </div>
-            <div className="carousel-item" style={{ display: 'inline-block', width: '300px' }}>
+            <div className="carousel-item" >
               <ShopifyBuyButton className='rounded-box' productId="7409613471809" />
             </div>
-            <div className="carousel-item" style={{ display: 'inline-block', width: '300px' }}>
+            <div className="carousel-item" >
               <ShopifyBuyButton className='rounded-box' productId="7409614225473" />
             </div>
           </div>
