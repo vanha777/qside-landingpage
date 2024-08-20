@@ -25,7 +25,7 @@ const ShopifyBuyButton = ({ productId }) => {
                 iframe: false,
                 product: {
                     // iframe: true,
-                    buttonDestination: 'modal', //'cart', 'modal', 'checkout', 'onlineStore'
+                    buttonDestination: 'onlineStore', //'cart', 'modal', 'checkout', 'onlineStore'
                     layout:"vertical",
                     width: "100%",
                     contents: {
@@ -41,7 +41,7 @@ const ShopifyBuyButton = ({ productId }) => {
                     },
                     styles: {
                         product: {
-                            'background-color': 'transparent',
+                            'background-color': '#3b3b3b',
                             "height":"400px",
                             "width":"300px"
                           },
