@@ -197,7 +197,12 @@ const Model = () => {
         </div>
 
         <div className="flex justify-center items-center mt-20">
-          <div className="carousel carousel-center bg-neutral rounded-box max-w-xl space-x-4 p-4">
+          <div className="carousel carousel-center bg-neutral rounded-box space-x-4 p-4"
+         style={{ width: "800px" ,
+          height: "auto" ,
+          backgroundColor:"#42424570"
+         }}
+         >
           <script src="http://sdks.shopifycdn.com/buy-button/v0.0.2/buybutton.min.js"></script>
             <div className="carousel-item">
               <ShopifyBuyButton className="rounded-box" productId="7400507113537" />

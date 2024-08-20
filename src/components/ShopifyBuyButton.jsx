@@ -22,7 +22,7 @@ const ShopifyBuyButton = ({ productId }) => {
             // node: buttonRef.current, // Use ref instead of ID
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: {
-                iframe: true,
+                iframe: false,
                 product: {
                     // iframe: true,
                     buttonDestination: 'modal', //'cart', 'modal', 'checkout', 'onlineStore'
@@ -46,12 +46,12 @@ const ShopifyBuyButton = ({ productId }) => {
                             "width":"300px"
                           },
                         button: {
-                            'background-color': '#ff5722',
+                            'background-color': '#666',
                             'font-size': '18px',
                             'padding': '12px 24px',
                             'border-radius': '8px',
                             ':hover': {
-                                'background-color': '#e64a19',
+                                'background-color': '#94928d',
                             },
                             'color': '#fff',
                             'font-weight': 'bold',
@@ -99,13 +99,13 @@ const ShopifyBuyButton = ({ productId }) => {
                     },
                     styles: {
                         button: {
-                            'background-color': '#ff5722',
+                            // 'background-color': '#ff5722',
                             'font-size': '18px',
                             'padding': '12px 24px',
                             'border-radius': '8px',
-                            ':hover': {
-                                'background-color': '#e64a19',
-                            },
+                            // ':hover': {
+                            //     'background-color': '#e64a19',
+                            // },
                             'color': '#fff',
                             'font-weight': 'bold',
                         },
@@ -150,12 +150,12 @@ const ShopifyBuyButton = ({ productId }) => {
                             // 'margin-bottom': '15px',
                         },
                         button: {
-                            'background-color': '#ff5722',
+                            'background-color': '#78b657',
                             'font-size': '18px',
                             'padding': '12px 24px',
                             'border-radius': '8px',
                             ':hover': {
-                                'background-color': '#e64a19',
+                                'background-color': '#87ca64',
                             },
                             'color': '#fff',
                             'font-weight': 'bold',
