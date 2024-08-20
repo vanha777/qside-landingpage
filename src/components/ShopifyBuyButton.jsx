@@ -22,7 +22,7 @@ const ShopifyBuyButton = ({ productId }) => {
             // node: buttonRef.current, // Use ref instead of ID
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: {
-                iframe: false,
+                iframe: true,
                 product: {
                     // iframe: true,
                     buttonDestination: 'modal', //'cart', 'modal', 'checkout', 'onlineStore'
@@ -40,6 +40,12 @@ const ShopifyBuyButton = ({ productId }) => {
                         unavailable: 'Unavailable',
                     },
                     styles: {
+                        product: {
+                            iframe: {
+                                height: '400px',
+                                backgroundColor: '#ff5722' // Ensure background color is set
+                              },
+                          },
                         button: {
                             'background-color': '#ff5722',
                             'font-size': '18px',
