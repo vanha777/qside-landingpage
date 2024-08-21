@@ -1,1 +1,1 @@
-# this is  CORNER STONE for qside-card landing page
+# this is  CORNER STONE for biz-touch landing page

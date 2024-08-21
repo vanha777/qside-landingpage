@@ -213,6 +213,12 @@ const Model = () => {
             <div className="carousel-item" >
               <ShopifyBuyButton className='rounded-box' productId="7409614225473" />
             </div>
+            <div className="carousel-item" >
+              <ShopifyBuyButton className='rounded-box' productId="7410628427841" />
+            </div>
+            <div className="carousel-item" >
+              <ShopifyBuyButton className='rounded-box' productId="7410637537345" />
+            </div>
           </div>
         </div>
 

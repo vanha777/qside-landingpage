@@ -64,7 +64,7 @@ const Features = () => {
               <div className="feature-text-container">
                 <div className="flex-1 flex-center">
                   <p className="feature-text g_text">
-                    Qside Executive Business Card is {' '}
+                    Bix Touch Executive Business Card is {' '}
                     <span className="text-white">
                       the first card to feature a tappable-grade metallic design.
                     </span>,
