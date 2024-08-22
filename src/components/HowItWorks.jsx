@@ -89,11 +89,11 @@ const HowItWorks = () => {
           </div>
         </div>
         {/* <div className="hiw-video"> */}
-        {/* <div className="p-10 pt-20">
+        <div className="p-10 pt-20">
           <video className="pointer-events-none" playsInline loop preload="none" muted autoPlay ref={videoRef}>
             <source src={frameVideo} type="video/mp4" />
           </video>
-        </div> */}
+        </div>
       </div>
 
     </section>
