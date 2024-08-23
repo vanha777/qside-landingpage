@@ -198,17 +198,18 @@ const Model = () => {
 
         <div className="flex justify-center items-center mt-20">
           <div className="carousel carousel-center bg-neutral rounded-box space-x-4 p-4"
-         style={{ width: "800px" ,
-          height: "auto" ,
-          backgroundColor:"#42424570"
-         }}
-         >
-          <script src="http://sdks.shopifycdn.com/buy-button/v0.0.2/buybutton.min.js"></script>
-            <div className="carousel-item">
-              <ShopifyBuyButton className="rounded-box" productId="7400507113537" />
-            </div>
+            style={{
+              width: "800px",
+              height: "auto",
+              backgroundColor: "#42424570"
+            }}
+          >
+            <script src="http://sdks.shopifycdn.com/buy-button/v0.0.2/buybutton.min.js"></script>
             <div className="carousel-item" >
               <ShopifyBuyButton className='rounded-box' productId="7409613471809" />
+            </div>
+            <div className="carousel-item" >
+              <ShopifyBuyButton className='rounded-box' productId="7410637537345" />
             </div>
             <div className="carousel-item" >
               <ShopifyBuyButton className='rounded-box' productId="7409614225473" />
@@ -216,8 +217,8 @@ const Model = () => {
             <div className="carousel-item" >
               <ShopifyBuyButton className='rounded-box' productId="7410628427841" />
             </div>
-            <div className="carousel-item" >
-              <ShopifyBuyButton className='rounded-box' productId="7410637537345" />
+            <div className="carousel-item">
+              <ShopifyBuyButton className="rounded-box" productId="7400507113537" />
             </div>
           </div>
         </div>
