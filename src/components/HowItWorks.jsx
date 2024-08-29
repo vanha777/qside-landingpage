@@ -30,7 +30,7 @@ const HowItWorks = () => {
   return (
     <section className="common-padding">
       <div className="screen-max-width">
-        <div id="chip" className="flex-center w-full my-20">
+        {/* <div id="chip" className="flex-center w-full my-20">
           <img src={chipImg} alt="chip" width={180} height={180} />
         </div>
 
@@ -54,13 +54,13 @@ const HowItWorks = () => {
                 className="bg-transparent relative z-10"
               />
             </div>
-            {/* <div className="hiw-video">
+            <div className="hiw-video">
               <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
                 <source src={frameVideo} type="video/mp4" />
               </video>
-            </div> */}
+            </div>
           </div>
-          {/* <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p> */}
+          <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
         </div>
 
         <div className="hiw-text-container">
@@ -87,13 +87,14 @@ const HowItWorks = () => {
             <p className="hiw-bigtext">Executive Business Card</p>
             <p className="hiw-text">with tapable features</p>
           </div>
-        </div>
+        </div> */}
         {/* <div className="hiw-video"> */}
         <div className="p-10 pt-20">
           <video className="pointer-events-none" playsInline loop preload="none" muted autoPlay ref={videoRef}>
             <source src={frameVideo} type="video/mp4" />
           </video>
         </div>
+        
       </div>
 
     </section>

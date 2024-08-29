@@ -7,7 +7,7 @@ const Hero = () => {
   const [videoSrc, setVideoSrc] = useState(window.innerWidth < 760 ? smallHeroVideo : heroVideo)
 
   const handleVideoSrcSet = () => {
-    if(window.innerWidth < 760) {
+    if (window.innerWidth < 760) {
       setVideoSrc(smallHeroVideo)
     } else {
       setVideoSrc(heroVideo)
@@ -28,12 +28,20 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="w-full nav-height bg-black relative">
-      <div className="h-5/6 w-full flex-center flex-col">
-        {/* <p id="hero" className="hero-title">Qside Executive Business Card</p> */}
+    // <section className="w-full nav-height bg-opacity-10 bg-gray-100 relative" style={{ backgroundColor: '#ECEBEC' }}>
+    <section className="w-full nav-height bg-opacity-10 relative mt-10 " style={{ backgroundColor: '#ffffff' }}>
+      {/* <div className="h-5/6 w-full flex-center flex-col ">
+        <p id="hero" className="hero-title" style={{ color: 'black' }}>Qside Executive Business Card</p>
         <div className="md:w-10/12 w-9/12">
-        {/* <div className="w-full h-full"> */}
           <video className="pointer-events-none" autoPlay muted loop playsInline={true} key={videoSrc}>
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        </div>
+      </div> */}
+
+      <div className="relative h-5/6 w-full flex-center flex-col">
+        <div className="md:w-10/12 w-9/12">
+          <video className="w-full h-full object-cover" autoPlay muted loop playsInline={true} key={videoSrc}>
             <source src={videoSrc} type="video/mp4" />
           </video>
         </div>
@@ -43,8 +51,11 @@ const Hero = () => {
         id="cta"
         className="flex flex-col items-center opacity-0 translate-y-20"
       >
-        {/* <a href="#highlights" className="btn">Buy</a>
-        <p className="font-normal text-xl">From $299</p> */}
+        <p id="hero" className="hero-title" style={{ color: 'black' }}>
+          Digital Business Card
+        </p>
+        <a href="https://biz-touch.myshopify.com/collections/all" className="btn font-normal text-white text-xl">Shop Now</a>
+        {/*href="#highlights"  <p className="font-normal text-black text-xl">From $299</p> */}
       </div>
     </section>
   )

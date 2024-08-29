@@ -86,9 +86,9 @@ const Model = () => {
     setControlsEnabled(prev => !prev);
   };
   return (
-    <section className="common-padding">
+    <section className="common-padding text-black" style={{ backgroundColor: '#ECEBEC' }}>
       <div className="screen-max-width">
-        <h1 id="heading" className="section-heading">
+        <h1 id="heading" className="section-heading" style={{ color: 'black' }}>
           Take a closer look.
         </h1>
         {/* Buttons to enable/disable controls */}
@@ -196,7 +196,7 @@ const Model = () => {
 
         </div>
 
-        <div className="flex justify-center items-center mt-20">
+        {/* <div className="flex justify-center items-center mt-20">
           <div className="carousel carousel-center bg-neutral rounded-box space-x-4 p-4"
             style={{
               width: "800px",
@@ -224,14 +224,17 @@ const Model = () => {
               <ShopifyBuyButton className="rounded-box" productId="7400507113537" />
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
-      {/* <div  className="flex flex-row items-center justify-center p-10">
-        <ShopifyBuyButton productId="7400507113537" />
+      <div className="flex flex-row items-center justify-center p-10">
+        {/* <ShopifyBuyButton productId="7400507113537" />
         <ShopifyBuyButton productId="7409613471809" />
-        <ShopifyBuyButton productId="7409614225473" />
-      </div> */}
+        <ShopifyBuyButton productId="7409614225473" /> */}
+        <a href="https://biz-touch.myshopify.com/collections/all">
+          <button className="btn btn-lg sm:btn-sm md:btn-md lg:btn-lg text-white">Shop Now</button>
+        </a>
+      </div>
 
     </section>
   )
