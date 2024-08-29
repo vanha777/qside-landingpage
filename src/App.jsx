@@ -6,17 +6,19 @@ import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
 import ShopifyBuyButton from './components/ShopifyBuyButton';
+import Slider from './components/Slider';
 
 // import * as Sentry from '@sentry/react';
 
 const App = () => {
   return (
-    <main className="bg-black">
+    <main className="bg-white">
       <Navbar />
       <Hero />
-      <Highlights />
+      {/* <Highlights /> */}
+      <Slider />
       <Model />
-      <Features />
+      {/* <Features /> */}
       <HowItWorks />
       <Footer />
     </main>
