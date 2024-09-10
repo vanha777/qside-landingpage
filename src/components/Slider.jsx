@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import ChatBox from "./ChatBox";
 
 
 const Slider = () => {
@@ -69,7 +68,6 @@ const Slider = () => {
           </div>
         </div>
       </div>
-      {/* <ChatBox /> */}
     </section>
   )
 }

@@ -18,7 +18,6 @@ const App = () => {
       {/* <Highlights /> */}
       <Slider />
       <Model />
-      <ChatBox/>
       {/* <Features /> */}
       <HowItWorks />
       <ChatIcon/>
