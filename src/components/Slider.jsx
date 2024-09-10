@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
+import ChatBox from "./ChatBox";
 
 
 const Slider = () => {
@@ -51,7 +51,7 @@ const Slider = () => {
             <div className="card bg-white w-80 shadow-xl">
               <figure>
                 <img
-                        src="/assets/images/step3.png"
+                  src="/assets/images/step3.png"
                   alt="Shoes" />
               </figure>
               <div className="card-body">
@@ -69,7 +69,7 @@ const Slider = () => {
           </div>
         </div>
       </div>
-
+      {/* <ChatBox /> */}
     </section>
   )
 }
