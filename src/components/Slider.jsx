@@ -19,7 +19,7 @@ const Slider = () => {
                   Step 1: Grab A Metal Card
                   {/* <div className="badge badge-secondary">NEW</div> */}
                 </h2>
-                <p>Choose your preferred Biz-Touch metal card based on the level of customization you desire.</p>
+                <p>Select your perfect Biz-Touch metal card, customized to match your unique style and vibe.</p>
                 {/* <div className="card-actions justify-end">
                   <div className="badge badge-outline">Style</div>
                   <div className="badge badge-outline">Design</div>
@@ -39,7 +39,7 @@ const Slider = () => {
                   Step 2: Build your profile
                   {/* <div className="badge badge-secondary">NEW</div> */}
                 </h2>
-                <p>Let your connections know more about your and your company by editing your profile information and design.</p>
+                <p>Receive forms via email, customize the design, and highlight key contacts to showcase your business and personal profile.</p>
                 {/* <div className="card-actions justify-end">
                   <div className="badge badge-outline">Digital Profile</div>
                   <div className="badge badge-outline">Offical</div>
@@ -59,7 +59,7 @@ const Slider = () => {
                   Step 3: Share & connnect
                   {/* <div className="badge badge-secondary">NEW</div> */}
                 </h2>
-                <p>With one tap on a smart phone, your connection has access to all the information you want to share.</p>
+                <p>Receive your card and connect instantly. With one tap on a smartphone, your contact gains access to all the information you wish to share.</p>
                 {/* <div className="card-actions justify-end">
                   <div className="badge badge-outline">Fashion</div>
                   <div className="badge badge-outline">Products</div>

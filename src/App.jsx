@@ -7,6 +7,7 @@ import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
 import ShopifyBuyButton from './components/ShopifyBuyButton';
 import Slider from './components/Slider';
+import ChatBox from './components/ChatBox';
 
 // import * as Sentry from '@sentry/react';
 
@@ -18,6 +19,7 @@ const App = () => {
       {/* <Highlights /> */}
       <Slider />
       <Model />
+      <ChatBox/>
       {/* <Features /> */}
       <HowItWorks />
       <Footer />
