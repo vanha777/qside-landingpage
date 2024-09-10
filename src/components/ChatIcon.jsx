@@ -17,7 +17,7 @@ const ChatIcon = () => {
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 z-50"
     >
-      <img src="https://tzqzzuafkobkhygtccse.supabase.co/storage/v1/object/public/biz_touch/theme/messenger.svg?t=2024-09-02T04%3A21%3A43.340Z" alt="SVG Image" />
+      <img className="w-16 h-16" src="https://tzqzzuafkobkhygtccse.supabase.co/storage/v1/object/public/biz_touch/theme/messenger.svg?t=2024-09-02T04%3A21%3A43.340Z" alt="SVG Image" />
     </a>
   );
 };
