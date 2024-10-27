@@ -29,7 +29,7 @@ const Hero = () => {
 
   return (
     // <section className="w-full nav-height bg-opacity-10 bg-gray-100 relative" style={{ backgroundColor: '#ECEBEC' }}>
-    <section className="w-full nav-height bg-opacity-10 relative mt-10 " style={{ backgroundColor: '#ffffff' }}>
+    <section className="w-full nav-height bg-opacity-10 relative mt-10 "style={{ backgroundColor: '#ECEBEC' }} >
       {/* <div className="h-5/6 w-full flex-center flex-col ">
         <p id="hero" className="hero-title" style={{ color: 'black' }}>Qside Executive Business Card</p>
         <div className="md:w-10/12 w-9/12">
@@ -39,7 +39,7 @@ const Hero = () => {
         </div>
       </div> */}
 
-      <div className="relative h-5/6 w-full flex-center flex-col">
+      <div className="relative h-5/6 w-full flex-center flex-col ">
         <div className="md:w-10/12 w-9/12">
           <video className="w-full h-full object-cover" autoPlay muted loop playsInline={true} key={videoSrc}>
             <source src={videoSrc} type="video/mp4" />
@@ -49,13 +49,12 @@ const Hero = () => {
 
       <div
         id="cta"
-        className="flex flex-col items-center opacity-0 translate-y-20"
+        className="flex flex-col items-center opacity-0 translate-y-20 "
       >
-        <p id="hero" className="hero-title" style={{ color: 'black' }}>
-          Digital Business Card
+        <p id="hero" className="hero-title font-normal" >
+          Bold. Unique. You.
         </p>
-        <a href="https://biz-touch.myshopify.com/collections/all" className="btn font-normal text-white text-xl">Shop Now</a>
-        {/*href="#highlights"  <p className="font-normal text-black text-xl">From $299</p> */}
+        <a href="https://biz-touch.myshopify.com/collections/all" className="btn font-normal text-xl text-white">Shop Now</a>
       </div>
     </section>
   )

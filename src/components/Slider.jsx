@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const Slider = () => {
   return (
-    <section className="common-padding text-black">
+    <section className="common-padding text-secondary bg-base-100">
       <div className="flex justify-center">
         <div className="carousel rounded-box space-x-4 p-4">
           <div className="carousel-item">
@@ -14,7 +14,7 @@ const Slider = () => {
                   alt="Shoes" />
               </figure>
               <div className="card-body">
-                <h2 className="card-title text-primary">
+                <h2 className="card-title ">
                   Step 1: Grab A Metal Card
                   {/* <div className="badge badge-secondary">NEW</div> */}
                 </h2>
@@ -34,7 +34,7 @@ const Slider = () => {
                   alt="Shoes" />
               </figure>
               <div className="card-body">
-                <h2 className="card-title text-primary">
+                <h2 className="card-title ">
                   Step 2: Build your profile
                   {/* <div className="badge badge-secondary">NEW</div> */}
                 </h2>
@@ -54,7 +54,7 @@ const Slider = () => {
                   alt="Shoes" />
               </figure>
               <div className="card-body">
-                <h2 className="card-title text-primary">
+                <h2 className="card-title">
                   Step 3: Share & connnect
                   {/* <div className="badge badge-secondary">NEW</div> */}
                 </h2>

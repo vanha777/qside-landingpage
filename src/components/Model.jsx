@@ -86,14 +86,14 @@ const Model = () => {
     setControlsEnabled(prev => !prev);
   };
   return (
-    <section className="common-padding text-black" style={{ backgroundColor: '#ECEBEC' }}>
+    <section className="common-padding text-secondary" style={{ backgroundColor: '#ECEBEC' }}>
       <div className="screen-max-width">
-        <h1 id="heading" className="section-heading" style={{ color: 'black' }}>
+        <h1 id="heading" className="section-heading ">
           Take a closer look.
         </h1>
         {/* Buttons to enable/disable controls */}
         <div className=" top-0 right-0 p-4 md:hidden flex justify-between items-center w-full">
-          <p className="text-sm font-light text-center">3D Viewer</p>
+          <p className="text-sm font-light text-center text-secondary">3D Viewer</p>
           <input
             type="checkbox"
             className="toggle toggle-success"
@@ -107,7 +107,34 @@ const Model = () => {
           // onTouchMove={(e) => e.stopPropagation()}
           // onTouchEnd={(e) => e.stopPropagation()}
           >
+                    <ModelView
+              type="rose"
+              index={1}
+              // groupRef={large}
+              groupRef={small}
+              gsapType="view1"
+              // controlRef={cameraControlLarge}
+              // setRotationState={setLargeRotation}
+              controlRef={cameraControlSmall}
+              setRotationState={setSmallRotation}
+              item={model}
+              size={size}
+              controlsEnabled={controlsEnabled}
+            />
             <ModelView
+              type="silver"
+              index={2}
+              groupRef={large}
+              gsapType="view2"
+              // controlRef={cameraControlLarge}
+              // setRotationState={setLargeRotation}
+              controlRef={cameraControlLarge}
+              setRotationState={setLargeRotation}
+              item={model}
+              size={size}
+              controlsEnabled={controlsEnabled}
+            />
+            {/* <ModelView
               type="silver"
               index={1}
               // groupRef={large}
@@ -133,7 +160,7 @@ const Model = () => {
               item={model}
               size={size}
               controlsEnabled={controlsEnabled}
-            />
+            /> */}
             <ModelView
               type="gold"
               index={3}
@@ -172,7 +199,7 @@ const Model = () => {
           </div>
 
           <div className="mx-auto w-full">
-            <p className="text-sm font-light text-center mb-5">{model.title}</p>
+            <p className="text-sm font-light text-center mb-5 text-secondary">{model.title}</p>
 
             <div className="flex-center">
               <ul className="color-container">
@@ -183,48 +210,10 @@ const Model = () => {
                   }} />
                 ))}
               </ul>
-
-              {/* <button className="size-btn-container">
-                {sizes.map(({ label, value }) => (
-                  <span key={label} className="size-btn" style={{ backgroundColor: size === value ? 'white' : 'transparent', color: size === value ? 'black' : 'white' }} onClick={() => setSize(value)}>
-                    {label}
-                  </span>
-                ))}
-              </button> */}
             </div>
           </div>
 
         </div>
-
-        {/* <div className="flex justify-center items-center mt-20">
-          <div className="carousel carousel-center bg-neutral rounded-box space-x-4 p-4"
-            style={{
-              width: "800px",
-              height: "auto",
-              backgroundColor: "#42424570"
-            }}
-          >
-            <script src="http://sdks.shopifycdn.com/buy-button/v0.0.2/buybutton.min.js"></script>
-            <div className="carousel-item" >
-              <ShopifyBuyButton className='rounded-box' productId="7409613471809" />
-            </div>
-            <div className="carousel-item" >
-              <ShopifyBuyButton className='rounded-box' productId="7414073491521" />
-            </div>
-            <div className="carousel-item" >
-              <ShopifyBuyButton className='rounded-box' productId="7414061924417" />
-            </div>
-            <div className="carousel-item" >
-              <ShopifyBuyButton className='rounded-box' productId="7409614225473" />
-            </div>
-            <div className="carousel-item" >
-              <ShopifyBuyButton className='rounded-box' productId="7410628427841" />
-            </div>
-            <div className="carousel-item">
-              <ShopifyBuyButton className="rounded-box" productId="7400507113537" />
-            </div>
-          </div>
-        </div> */}
 
       </div>
       <div className="flex flex-row items-center justify-center p-10">

@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#5800FF",
+        // primary: "#5800FF",
         blue: "#5800FF",
         gray: {
           DEFAULT: "#86868b",
@@ -17,4 +17,7 @@ export default {
     },
   },
   plugins: [require('daisyui'),],
+  daisyui: {
+    themes: ["cyberpunk","light", "dark", "cupcake","retro", "synthwave", "aqua", "business", "corporate", "emerald", "fantasy", "forest", "garden", "halloween", "luxury", "night", "pastel", "valentine", "winter", "bumblebee"],
+  },
 };
