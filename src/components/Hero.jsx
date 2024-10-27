@@ -54,7 +54,7 @@ const Hero = () => {
         <p id="hero" className="hero-title font-normal" >
           Bold. Unique. You.
         </p>
-        <a href="https://biz-touch.myshopify.com/collections/all" className="btn font-normal text-xl text-white">Join Now</a>
+        <a href="https://biz-touch.me/login/create" className="btn font-normal text-xl text-white">Join Now</a>
       </div>
     </section>
   )
