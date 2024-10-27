@@ -89,7 +89,7 @@ const Model = () => {
     <section className="common-padding text-secondary" style={{ backgroundColor: '#ECEBEC' }}>
       <div className="screen-max-width">
         <h1 id="heading" className="section-heading ">
-          Take a closer look.
+          Let's Get Physical.
         </h1>
         {/* Buttons to enable/disable controls */}
         <div className=" top-0 right-0 p-4 md:hidden flex justify-between items-center w-full">
@@ -221,7 +221,7 @@ const Model = () => {
         <ShopifyBuyButton productId="7409613471809" />
         <ShopifyBuyButton productId="7409614225473" /> */}
         <a href="https://biz-touch.myshopify.com/collections/all">
-          <button className="btn btn-lg sm:btn-sm md:btn-md lg:btn-lg text-white">Shop Now</button>
+          <button className="btn btn-lg sm:btn-sm md:btn-md lg:btn-lg text-white">Claim Now</button>
         </a>
       </div>
 
